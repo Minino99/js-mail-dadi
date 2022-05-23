@@ -46,35 +46,35 @@ const addResult = document.querySelector(".container");
 
 playNow.addEventListener("click", function () {
 
- console.log("prova event listener");
+ console.log("prova event listener")
 
-//   for (let i = 0; i < emailAddresses.length; i++) {
-//     if (emailInput.value === emailAddresses[i]) {
-//       validEmail = (true);
-//     }
-//   }
+  // for (let i = 0; i < emailAddresses.length; i++) {
+  //   if (emailInput.value === emailAddresses[i]) {
+  //     validEmail = (true);
+  //   }
+  // }
 
-//   if (validEmail) {
-//     for (let i = 0; i < 2; i++) {
-//       cpuValue =
-//         (cpuValue + diceNumbers[Math.floor(Math.random() * diceNumbers.length)]);
-//       userValue =
-//         (userValue + diceNumbers[Math.floor(Math.random() * diceNumbers.length)]);
-//     }
-//   } else {
-//     addResult.innerHTML += ("<h1>NON SEI PRESENTE IN WHITELIST</h1>");
-//   }
+  // if (validEmail) {
+  //   for (let i = 0; i < 2; i++) {
+  //     cpuValue =
+  //       (cpuValue + diceNumbers(Math.floor(Math.random() * diceNumbers.length)));
+  //     userValue =
+  //       (userValue + diceNumbers(Math.floor(Math.random() * diceNumbers.length)));
+  //   }
+  // } else {
+  //   addResult.innerHTML += ("<h1>NON SEI PRESENTE IN WHITELIST</h1>");
+  // }
 
-//   document.getElementById("usernumber").innerHTML = (userValue);
-//   document.getElementById("cpunumber").innerHTML = (cpuValue);
+  // document.getElementById("usernumber").innerHTML = (userValue);
+  // document.getElementById("cpunumber").innerHTML = (cpuValue);
 
-//   if (cpuValue < userValue) {
-//     addResult.innerHTML += ("<h1>Hai VINTO contro la CPU</h1>");
-//   } else if (cpuValue === userValue && cpuValue + userValue != 0){
-//     addResult.innerHTML += ("<h1>Hai PAREGGIATO contro la CPU</h1>");
-//   } else if (cpuValue > userValue){
-//    addResult.innerHTML += ("<h1>Hai PERSO contro la CPU</h1>");
-//   } else if (cpuValue === 0 && userValue === 0){
-//    addResult.innerHTML += ("");
-//   }
-// });
+  // if (cpuValue < userValue) {
+  //   addResult.innerHTML += ("<h1>Hai VINTO contro la CPU</h1>");
+  // } else if (cpuValue === userValue && cpuValue + userValue != 0){
+  //   addResult.innerHTML += ("<h1>Hai PAREGGIATO contro la CPU</h1>");
+  // } else if (cpuValue > userValue){
+  //  addResult.innerHTML += ("<h1>Hai PERSO contro la CPU</h1>");
+  // } else if (cpuValue === 0 && userValue === 0){
+  //  addResult.innerHTML += ("");
+  // }
+});
