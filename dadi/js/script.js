@@ -1,33 +1,30 @@
-// Mail
-// Chiedi all’utente la sua email,
-// controlla che sia nella lista di chi può accedere,
-// stampa un messaggio appropriato sull’esito del controllo.
-// (non usare includes() o indexOf)
-
-const emailAddresses = [
-  "loizzo.pasqualino@gmail.com",
-  "pakoloizzo@gmail.com",
-  "seiautorizzato@msn.com",
-  "ok",
-];
+// Gioco dei dadi
+// Generare più  numeri random da 1 a 6, sia per il giocatore sia per il computer.
+// Stabilire il vincitore, in base a chi fa il punteggio più alto.
 
 const playNow = document.getElementById("playnowbtn");
 
 playNow.addEventListener("click", function () {
-  let emailInput = document.getElementById("userEmail");
-  let validEmail = false;
+  const diceNumbers = [1, 2, 3, 4, 5, 6];
   const addResult = document.querySelector(".result");
-  console.log("prova event listener");
+  let userValue = 0;
+  let cpuValue = 0;
 
-  for (let i = 0; i < emailAddresses.length; i++) {
-    if (emailInput.value === emailAddresses[i]) {
-      validEmail = true;
+    for (let i = 0; i < 2; i++) {
+      cpuValue =
+        cpuValue + diceNumbers[Math.floor(Math.random() * diceNumbers.length)];
+      userValue =
+        userValue + diceNumbers[Math.floor(Math.random() * diceNumbers.length)];
     }
+
+  document.getElementById("usernumber").innerHTML = userValue;
+  document.getElementById("cpunumber").innerHTML = cpuValue;
+
+  if (cpuValue < userValue) {
+    addResult.innerHTML = "<h1>Hai VINTO contro la CPU</h1>";
+  } else if (cpuValue === userValue && cpuValue + userValue != 0) {
+    addResult.innerHTML = "<h1>Hai PAREGGIATO contro la CPU</h1>";
+  } else if (cpuValue > userValue) {
+    addResult.innerHTML = "<h1>Hai PERSO contro la CPU</h1>";
   }
-
-  if (validEmail) {
-      addResult.innerHTML = "<h1>SEI PRESENTE IN WHITELIST</h1>";
-    } else {
-      addResult.innerHTML = "<h1>NON SEI PRESENTE IN WHITELIST</h1>";
-    }
-  });
+});
