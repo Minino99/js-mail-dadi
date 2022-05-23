@@ -45,6 +45,9 @@ const playNow = document.getElementById("playnowbtn");
 const addResult = document.querySelector(".container");
 
 playNow.addEventListener("click", function () {
+
+ console.log("prova event listener")
+
   for (let i = 0; i < emailAddresses.length; i++) {
     if (emailInput.value === emailAddresses[i]) {
       validEmail = true;
