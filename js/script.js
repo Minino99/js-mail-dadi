@@ -36,31 +36,42 @@ const emailAddresses = [
   "seiautorizzato@msn.com",
   "ok",
 ];
-let emailInput = prompt("dammi il tuo indirizzo email");
+let emailInput = document.getElementById("userEmail");
 const diceNumbers = [1, 2, 3, 4, 5, 6];
 let validEmail = false;
 let userValue = 0;
 let cpuValue = 0;
+const playNow = document.getElementById("playnowbtn");
+const addResult = document.querySelector(".container");
 
-for (let i = 0; i < emailAddresses.length; i++) {
-  if (emailInput === emailAddresses[i]) {
-    validEmail = true;
+playNow.addEventListener("click", function () {
+  for (let i = 0; i < emailAddresses.length; i++) {
+    if (emailInput.value === emailAddresses[i]) {
+      validEmail = true;
+    }
   }
-}
 
-if (validEmail) {
-  for (let i = 0; i < 2; i++) {
-    cpuValue =
-      cpuValue + diceNumbers[Math.floor(Math.random() * diceNumbers.length)];
-    userValue =
-      userValue + diceNumbers[Math.floor(Math.random() * diceNumbers.length)];
+  if (validEmail) {
+    for (let i = 0; i < 2; i++) {
+      cpuValue =
+        cpuValue + diceNumbers[Math.floor(Math.random() * diceNumbers.length)];
+      userValue =
+        userValue + diceNumbers[Math.floor(Math.random() * diceNumbers.length)];
+    }
+  } else {
+    addResult.innerHTML += "<h1>NON SEI PRESENTE IN WHITELIST</h1>";
   }
-} else {
-  alert("il tuo indirizzo mail non è presente il lista");
-}
 
-if (cpuValue < userValue) {
-  alert("complimenti, hai vinto contro un misero computer");
-} else {
- alert("che pena, hai perso contro un computer")
-}
+  document.getElementById("usernumber").innerHTML = userValue;
+  document.getElementById("cpunumber").innerHTML = cpuValue;
+
+  if (cpuValue < userValue) {
+    addResult.innerHTML += "<h1>Hai VINTO contro la CPU</h1>";
+  } else if (cpuValue === userValue && cpuValue + userValue != 0){
+    addResult.innerHTML += "<h1>Hai PAREGGIATO contro la CPU</h1>";
+  } else if (cpuValue > userValue){
+   addResult.innerHTML += "<h1>Hai PERSO contro la CPU</h1>";
+  } else if (cpuValue === 0 && userValue === 0){
+   addResult.innerHTML += "";
+  }
+});
